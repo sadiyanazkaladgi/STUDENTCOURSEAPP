@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Profile • StudentCourseApp</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="mini-hero"><h1>Profile</h1></header>
+  <main class="main-wrap">
+    <div class="profile-card wide">
+      <h2><%= user.name %></h2>
+      <p><strong>Email:</strong> <%= user.email %></p>
+      <p><strong>Joined courses:</strong> <%= user.courses.length %></p>
+      <a class="pill" href="/home">Back to Home</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Join Courses</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>🎯 Join Your Courses</h1>
+  <div class="container">
+    <% courses.forEach(course => { %>
+      <div class="course-card">
+        <img src="<%= course.image %>" alt="<%= course.title %>">
+        <h3><%= course.title %></h3>
+        <p><%= course.description %></p>
+        <% if (joinedIds.includes(course._id.toString())) { %>
+          <button disabled>✅ Joined</button>
+        <% } else { %>
+          <form method="POST" action="/join/<%= course._id %>">
+            <button type="submit">Join Now</button>
+          </form>
+        <% } %>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

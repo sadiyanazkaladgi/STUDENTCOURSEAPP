@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registered Courses</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>📚 Your Registered Courses</h1>
+  <div class="container">
+    <% if (courses.length === 0) { %>
+      <p>No courses joined yet! 🕊️</p>
+    <% } else { %>
+      <% courses.forEach(course => { %>
+        <div class="course-card">
+          <img src="<%= course.image %>" alt="<%= course.title %>">
+          <h3><%= course.title %></h3>
+          <p><%= course.description %></p>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+  <button onclick="window.location.href='/home'">🏠 Back to Home</button>
+</body>
+</html>

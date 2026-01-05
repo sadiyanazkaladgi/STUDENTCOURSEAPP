@@ -1,0 +1,26 @@
+groups:
+  - name: BasicAlerts
+    rules:
+    - alert: HighCPU
+      expr: rate(container_cpu_usage_seconds_total[1m]) > 0.80
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High CPU usage detected"
+
+    - alert: LowDiskSpace
+      expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes > 0.85
+      for: 2m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Disk usage above 85%"
+
+    - alert: ServiceDown
+      expr: up == 0
+      for: 30s
+      labels:
+        severity: critical
+      annotations:
+        summary: "Service is down"

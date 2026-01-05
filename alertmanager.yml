@@ -1,0 +1,7 @@
+route:
+  receiver: "console"
+
+receivers:
+  - name: "console"
+    webhook_configs:
+      - url: http://localhost
